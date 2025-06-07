@@ -35,9 +35,12 @@ export default function IntroduceSection() {
       >
         <h1 className="text-4xl font-bold tracking-tight">안녕하세요! 👋</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          사용자 경험을 중시하는 주니어 프론트엔드 개발자 유헌상입니다.
+          사용자 경험과 편리함을 중요하게 생각하며 힘든 일이 있더라도 긍정적인,
+          주니어 프론트엔드 개발자 유헌상입니다.
           <br />
-          깔끔하고 직관적인 웹 서비스를 만들어가고 있습니다.
+          깔끔하고 직관적인 웹 서비스를 만드는 것을 목표로 하며 다양한 경험을
+          하는 것을 좋아합니다.
+          <br />
         </p>
       </div>
 
@@ -138,6 +141,14 @@ export default function IntroduceSection() {
                 <p className="text-sm text-muted-foreground">
                   팀원들과의 원활한 소통을 통해 더 나은 결과물을 만들어가고
                   싶습니다.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold">업무태도와 성격</h4>
+                <p className="text-sm text-muted-foreground">
+                  잘 해결되지 않는 문제나 어려운 상황이 있더라도 긍정적으로
+                  생각하는 자세를 갖고 있습니다. '모든 것이 경험이다' 라는
+                  생각으로 배워나가도록 하겠습니다.
                 </p>
               </div>
             </CardContent>
