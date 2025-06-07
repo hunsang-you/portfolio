@@ -13,7 +13,14 @@ export default function IntroduceSection() {
   const valuesAnimation = useScrollAnimation();
   const skillsAnimation = useScrollAnimation();
 
-  const skills = ["JavaScript", "TypeScript", "React", "Next.js", "HTML/CSS"];
+  const skills = [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "HTML/CSS",
+    "Python",
+  ];
   const tools = ["Git", "Figma", "notion", "discord"];
 
   return (
@@ -150,7 +157,7 @@ export default function IntroduceSection() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Code className="h-5 w-5" />
-              FrontEnd
+              Skills
             </CardTitle>
           </CardHeader>
           <CardContent>
