@@ -1,16 +1,26 @@
 import type { StaticImageData } from "next/image";
 import MiriStock from "@/public/MiriStock.png";
+import MiriStock2 from "@/public/MiriStock2.gif";
+import MiriStock3 from "@/public/MiriStock3.gif";
+import MiriStock4 from "@/public/MiriStock4.gif";
+import MiriStock5 from "@/public/MiriStock5.gif";
 import CoffeeBrew from "@/public/coffeebrew.jpg";
+import CoffeeBrew2 from "@/public/Coffeebrew2.gif";
+import CoffeeBrew3 from "@/public/coffeebrew3.jpg";
+import CoffeeBrew4 from "@/public/coffeebrew4.jpeg";
 import AightNow from "@/public/AightNow.png";
+import AightNow2 from "@/public/AightNow2.gif";
+import AightNow3 from "@/public/AightNow3.png";
 
 export interface Project {
   id: number;
   title: string;
   description: string;
   detailedDescription?: string;
-  image: StaticImageData | string;
+  image: (StaticImageData | string)[]; // 이미지, GIF, MP4 모두 포함 가능
   tags: string[];
   github: string;
+  redirect: string | null;
   demo?: string;
   duration?: string;
   team?: string;
@@ -26,9 +36,10 @@ export const projects: Project[] = [
       "Next.js를 이용한 해외 주식 뉴스 실시간 번역과 AI 애널리스트가 알려주는 어려운 해외주식 AI 리포트를 제공하는 웹 서비스 입니다.",
     detailedDescription:
       "Next.js를 이용한 해외 주식 뉴스 실시간 번역과 AI 애널리스트가 알려주는 어려운 해외주식 AI 리포트를 제공하는 웹 서비스 입니다. 일 경험 프로그램의 프로젝트 캠프 Next.js 1기에 참여하여 기업 연계로 프로젝트를 진행하였습니다. 저는 해외 주식 검색 및 검색된 주식과 관련된 해외 뉴스 제공, OpenAI를 이용한 AI 챗봇 구현, 이미지 최적화를 담당했습니다",
-    image: AightNow,
+    image: [AightNow, AightNow2, AightNow3],
     tags: ["Next.js", "Typescript", "zustand", "Supabase"],
     github: "https://github.com/NextCamp-8B/8B-SF",
+    redirect: "https://8b-test.vercel.app/ko",
     duration: "2024.06 - 2024.08 (2개월)",
     team: "팀 프로젝트(4인)",
     features: [
@@ -50,9 +61,10 @@ export const projects: Project[] = [
       "빅데이터 추천 시스템을 이용한 커피 원두 추천 사이트입니다. 커피를 즐겨 마시지만, 본인의 커피(원두) 취향을 잘 모르는 일반 사용자들이 추천 시스템을 통해 다양한 커피를 접해보고 본인에게 맞는 커피를 찾아갈 수 있도록 도움을 주기위한 서비스입니다",
     detailedDescription:
       "빅데이터 추천 시스템을 이용한 커피 원두 추천 사이트입니다. 저는 원두 전체 목록 페이지와 원두 상세 페이지, 유저 프로필 페이지 및 키워드 검색 기능을 구현했습니다.",
-    image: CoffeeBrew,
+    image: [CoffeeBrew, CoffeeBrew2, CoffeeBrew3, CoffeeBrew4],
     tags: ["React", "Typescript", "Redux-toolkit"],
     github: "https://github.com/hunsang-you/coffeebrew",
+    redirect: null,
     duration: "2023.02 - 2023.04 (2개월)",
     team: "팀 프로젝트(6인, FE-3/BE-3)",
     features: [
@@ -75,9 +87,10 @@ export const projects: Project[] = [
       "React, Javascript로 구현한 과거 데이터로 미리 해보는 주식투자 시뮬레이션 웹사이트입니다.",
     detailedDescription:
       "React, Javascript로 구현한 과거 데이터로 미리 해보는 주식투자 시뮬레이션 웹사이트입니다. 사용자 친화적인 UI/UX를 중심으로 설계했으며, 저는 Q&A 게시판, 주식 검색 및 최근 조회, 추가 메뉴, 유저 포트폴리오를 구현했습니다.",
-    image: MiriStock,
+    image: [MiriStock, MiriStock2, MiriStock3, MiriStock4, MiriStock5],
     tags: ["React", "JavaScript", "zustand"],
     github: "https://github.com/hunsang-you/MiriStock",
+    redirect: null,
     duration: "2023.01 - 2023.02 (2개월)",
     team: "팀 프로젝트(5인, FE-3/BE-2)",
     features: [
@@ -89,7 +102,7 @@ export const projects: Project[] = [
     ],
     challenges: [
       "첫 프로젝트 경험으로 프로젝트의 전반적인 싸이클을 알게된 계기",
-      "모바일 위주의 사용을 목적으로 한 웹서비스 였기 때문에 보다 더 나은 화면 구성을 위한 고민과, 유저에게 정말 필요한 데이터가 무엇일지 고민해보고, 이를 차트 라이브러리를 이용하여 시각적으로 도움을 주고자 하였습니다",
+      "모바일 위주의 사용을 목적으로 한 웹서비스 였기 때문에 보다 더 나은 화면 구성을 위한 고민과, 유저에게 정말 필요한 데이터가 무��일지 고민해보고, 이를 차트 라이브러리를 이용하여 시각적으로 도움을 주고자 하였습니다",
       "Figma로 화면을 디자인, 설계 하는 과정에서 사용자 경험을 고려한 직관적인 UI 설계를 위해 고민할 수 있었습니다",
     ],
   },

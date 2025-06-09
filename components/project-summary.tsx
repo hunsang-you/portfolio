@@ -3,11 +3,42 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { Github, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { projects } from "@/constants/projects";
+
+// 미디어 타입 확인 함수들
+function isGifFile(src: string | any): boolean {
+  if (typeof src === "string") {
+    return src.toLowerCase().endsWith(".gif");
+  }
+  if (src && typeof src === "object" && src.src) {
+    return src.src.toLowerCase().endsWith(".gif");
+  }
+  return false;
+}
+
+function isVideoFile(src: string | any): boolean {
+  if (typeof src === "string") {
+    return src.toLowerCase().match(/\.(mp4|webm|ogg|mov)$/i) !== null;
+  }
+  if (src && typeof src === "object" && src.src) {
+    return src.src.toLowerCase().match(/\.(mp4|webm|ogg|mov)$/i) !== null;
+  }
+  return false;
+}
+
+function getMediaSrc(src: string | any): string {
+  if (typeof src === "string") {
+    return src;
+  }
+  if (src && typeof src === "object" && src.src) {
+    return src.src;
+  }
+  return ""; // 빈 문자열 반환
+}
 
 export default function ProjectSummary() {
   const titleAnimation = useScrollAnimation();
@@ -46,12 +77,44 @@ export default function ProjectSummary() {
           >
             <Link href={`/project#project-${project.id}`} className="block">
               <div className="aspect-video relative">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
+                {isVideoFile(project.image[0]) ? (
+                  <div className="relative w-full h-full">
+                    <video
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      playsInline
+                      autoPlay
+                    >
+                      <source
+                        src={getMediaSrc(project.image[0])}
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                      VIDEO
+                    </div>
+                  </div>
+                ) : isGifFile(project.image[0]) ? (
+                  <div className="relative w-full h-full">
+                    <img
+                      src={getMediaSrc(project.image[0]) || ""}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                      GIF
+                    </div>
+                  </div>
+                ) : (
+                  <Image
+                    src={project.image[0] || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
               <CardHeader>
                 <CardTitle className="text-lg hover:text-primary transition-colors">
@@ -74,11 +137,32 @@ export default function ProjectSummary() {
             <CardContent className="pt-0">
               <div className="flex gap-2">
                 <Button size="sm" variant="outline" asChild>
-                  <Link href={project.github}>
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Github className="h-4 w-4 mr-1" />
                     GitHub
                   </Link>
                 </Button>
+                {project.redirect && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
+                    asChild
+                  >
+                    <Link
+                      href={project.redirect}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Globe className="h-4 w-4 mr-1" />
+                      연결
+                    </Link>
+                  </Button>
+                )}
               </div>
             </CardContent>
           </Card>
