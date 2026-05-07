@@ -121,6 +121,14 @@ export default function IntroduceSection() {
                         2024.05 ~ 2024.08
                       </p>
                     </div>
+                    <div>
+                      <h4 className="font-semibold">
+                        SK Networks Family AI 23기 수료
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        2025.11 ~ 2026.05
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
