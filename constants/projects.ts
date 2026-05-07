@@ -52,7 +52,7 @@ export const projects: Project[] = [
       "Jenkins",
     ],
     github: "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN23-FINAL-1Team",
-    redirect: null,
+    redirect: "https://geumbang.duckdns.org/home",
     duration: "2026.04 - 2026.05",
     team: "4인 팀 프로젝트 / PM",
     role:
