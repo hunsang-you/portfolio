@@ -256,7 +256,7 @@ function ProjectCard({
 
           {project.features && (
             <div>
-              <h4 className="mb-2 font-semibold">주요 구현</h4>
+              <h4 className="mb-2 font-semibold">맡은 작업</h4>
               <ul className="space-y-2">
                 {project.features.map((feature) => (
                   <li
@@ -273,7 +273,7 @@ function ProjectCard({
 
           {project.challenges && (
             <div>
-              <h4 className="mb-2 font-semibold">기술적 고민</h4>
+              <h4 className="mb-2 font-semibold">고민했던 점</h4>
               <ul className="space-y-2">
                 {project.challenges.map((challenge) => (
                   <li

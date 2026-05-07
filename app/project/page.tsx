@@ -30,7 +30,7 @@ export default function ProjectPage() {
             프로젝트 상세
           </h1>
           <p className="text-xl text-muted-foreground">
-            AI 기능 구현, 프론트엔드 개발, 협업 과정에서 배운 내용을 정리했습니다.
+            프로젝트마다 어떤 문제를 맡았고, 어떻게 풀어갔는지 정리했습니다.
           </p>
         </div>
         <ProjectDetail />

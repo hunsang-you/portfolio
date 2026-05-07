@@ -48,13 +48,13 @@ export default function IntroduceSection() {
           }`}
         >
           <h1 className="text-4xl font-bold tracking-tight">
-            AI 기능을 서비스 흐름으로 연결하는 개발자
+            프론트엔드와 AI 기능을 함께 구현합니다
           </h1>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-muted-foreground">
-            React와 Next.js 기반 프론트엔드 경험을 바탕으로 FastAPI,
-            OpenAI API, 임베딩 기반 검색, 데이터 흐름을 함께 다룹니다.
-            사용자의 입력이 AI 기능과 API, 검색 결과, 화면 상태로 자연스럽게
-            이어지는 서비스를 만드는 데 관심이 있습니다.
+            Next.js 화면 구현, FastAPI API, OpenAI 기반 기능, 검색·추천
+            프로젝트를 경험했습니다. 사용자가 보는 화면과 데이터가 처리되는
+            과정을 함께 확인하며, 아이디어를 실제 동작하는 서비스로 옮기는 데
+            강점이 있습니다.
           </p>
         </div>
 
@@ -143,33 +143,38 @@ export default function IntroduceSection() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold">AI를 실제 기능으로 연결</h4>
+                  <h4 className="font-semibold">
+                    기능은 화면에서 완성된다고 생각합니다
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    모델 호출에서 끝나지 않고 입력, API, 데이터, 검색 결과,
-                    사용자 화면까지 이어지는 흐름을 중요하게 생각합니다.
+                    기능이 돌아가는지만 보지 않습니다. 사용자가 어떤 순서로
+                    입력하고, 기다리고, 결과를 확인하는지까지 같이 봅니다.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold">사용자 흐름 중심 개발</h4>
+                  <h4 className="font-semibold">
+                    AI 기능은 실패하는 순간까지 설계합니다
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    정상 동작뿐 아니라 대기 상태, 실패 상태, 재시도, 결과 확인
-                    흐름까지 함께 고려하는 서비스를 만들고자 합니다.
+                    생성형 AI는 응답 시간이 길고 결과도 매번 달라질 수
+                    있습니다. 그래서 로딩, 실패, 재시도, 상태 초기화처럼
+                    사용자가 실제로 마주하는 순간까지 함께 챙기려 합니다.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold">프론트엔드와 AI 역량의 결합</h4>
+                  <h4 className="font-semibold">프론트엔드는 제 출발점입니다</h4>
                   <p className="text-sm text-muted-foreground">
-                    사용자와 가장 가까운 화면 구현 경험을 바탕으로 AI 기능이
-                    실제 서비스 안에서 이해하기 쉽고 안정적으로 쓰이도록
-                    만드는 개발자가 되는 것이 목표입니다.
+                    화면 구현에서 시작해 API와 AI 기능까지 다루는 쪽으로
+                    넓혀 왔습니다. 사용자가 보는 부분과 서버에서 처리되는
+                    부분을 함께 이해하는 개발자로 성장하고 있습니다.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold">협업과 기록</h4>
+                  <h4 className="font-semibold">기록하며 함께 맞춰 갑니다</h4>
                   <p className="text-sm text-muted-foreground">
-                    PM 역할을 수행하며 기능 우선순위, GitHub Issue/PR, 일정
-                    관리를 경험했습니다. 문제와 결정 과정을 기록하고 공유하는
-                    협업 방식을 선호합니다.
+                    PM 역할을 맡으며 기능 우선순위와 일정을 조율했습니다.
+                    작업 내용과 결정 이유를 남겨 팀원이 같은 맥락에서 움직일
+                    수 있게 하는 편입니다.
                   </p>
                 </div>
               </CardContent>

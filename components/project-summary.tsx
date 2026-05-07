@@ -47,7 +47,7 @@ export default function ProjectSummary() {
       >
         <h2 className="text-3xl font-bold tracking-tight">주요 프로젝트</h2>
         <p className="mt-2 text-muted-foreground">
-          AI 서비스 구현 경험과 프론트엔드 프로젝트 경험을 함께 정리했습니다.
+          프론트엔드에서 AI 서비스까지, 직접 부딪히며 만든 프로젝트들입니다.
         </p>
       </div>
 
@@ -150,7 +150,7 @@ export default function ProjectSummary() {
         }`}
       >
         <Button asChild>
-          <Link href="/project">모든 프로젝트 보기</Link>
+          <Link href="/project">프로젝트 자세히 보기</Link>
         </Button>
       </div>
     </div>

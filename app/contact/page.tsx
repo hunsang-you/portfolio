@@ -22,11 +22,11 @@ export default function ContactPage() {
         <div className="mt-16 text-center">
           <div className="mx-auto max-w-2xl">
             <h2 className="mb-4 text-2xl font-bold">
-              AI와 웹 서비스를 함께 이해하는 개발자로 성장하고 있습니다.
+              화면 너머의 동작까지 함께 보는 개발자가 되고 싶습니다.
             </h2>
             <p className="text-muted-foreground">
-              프론트엔드 경험을 바탕으로 LLM, API, 데이터, 검색 결과가 사용자
-              흐름 안에서 안정적으로 이어지는 서비스를 만들고 싶습니다.
+              사용자가 보는 화면을 만들며 시작했고, 이제는 그 화면 뒤에서
+              움직이는 API와 데이터, AI 기능까지 함께 이해하려고 합니다.
             </p>
           </div>
         </div>
