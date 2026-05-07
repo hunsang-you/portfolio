@@ -11,6 +11,9 @@ import CoffeeBrew4 from "@/public/coffeebrew4.jpeg";
 import AightNow from "@/public/AightNow.png";
 import AightNow2 from "@/public/AightNow2.gif";
 import AightNow3 from "@/public/AightNow3.png";
+import GeumbangLogo from "@/public/GeumbangLogo.png";
+import GeumbangDiagram from "@/public/GeumbangDiagram.png";
+import GeumbangErd from "@/public/GeumbangErd.png";
 
 export interface Project {
   id: number;
@@ -29,6 +32,39 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 4,
+    title: "금방",
+    description:
+      "LLM 기반 이미지 생성과 Vector Similarity Search를 결합해 사용자가 상상하는 주거 공간과 실제 부동산 매물을 연결하는 AI 부동산 큐레이션 서비스입니다.",
+    detailedDescription:
+      "사용자가 원하는 방의 분위기와 조건을 텍스트로 입력하면 생성형 AI가 공간 이미지를 만들고, 해당 이미지의 특징을 CLIP 임베딩으로 추출해 PGVector 기반 유사도 검색으로 실제 매물을 추천하는 서비스입니다. 단순 가격/면적 필터 중심의 부동산 탐색에서 벗어나, 사용자의 감성적인 요구사항을 시각화하고 실제 매물 데이터와 연결하는 경험을 구현하고 있습니다. 또한 머신러닝 기반 시세 예측 모델을 함께 구성해 추천 매물의 가격 적정성을 판단할 수 있는 가이드를 제공하는 것을 목표로 진행 중입니다.",
+    image: [GeumbangLogo, GeumbangDiagram, GeumbangErd],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "OpenAI",
+      "PGVector",
+      "AWS",
+    ],
+    github: "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN23-FINAL-1Team",
+    redirect: null,
+    duration: "2026.03 - 진행 중",
+    team: "팀 프로젝트(4명)",
+    features: [
+      "사용자 프롬프트를 기반으로 LLM과 이미지 생성 모델을 활용해 원하는 주거 공간 이미지를 생성",
+      "생성 이미지와 실제 매물 이미지를 CLIP 임베딩으로 벡터화하고 PGVector 유사도 검색으로 매칭",
+      "Next.js 프론트엔드와 FastAPI 백엔드를 연동해 AI 추천, 매물 조회, 찜, 마이페이지 흐름 구현",
+      "PostgreSQL/RDS와 S3를 활용해 매물 데이터, 이미지, 사용자 생성 결과물을 관리",
+      "머신러닝 기반 시세 예측 모델을 통해 매물 가격의 합리성을 판단할 수 있는 가이드 제공",
+    ],
+    challenges: [
+      "텍스트로 표현된 추상적인 주거 취향을 실제 검색 가능한 이미지/벡터 데이터로 변환하는 흐름을 설계하며 AI 기능과 서비스 UX를 함께 고려했습니다.",
+      "생성 이미지와 기존 매물 이미지가 같은 기준으로 비교될 수 있도록 CLIP 임베딩 추출, 저장, 유사도 검색 파이프라인을 백엔드 API와 연결했습니다.",
+      "프론트엔드 중심 프로젝트 경험에서 확장해 FastAPI, PostgreSQL, S3, Docker, Jenkins 등 백엔드와 배포 흐름까지 함께 다루며 서비스 전체 구조를 이해했습니다.",
+    ],
+  },
   {
     id: 1,
     title: "AightNow(아잇나우)",

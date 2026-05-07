@@ -65,6 +65,30 @@ export const skillsInfo: SkillInfo[] = [
       "알고리즘 문제 해결에 활용",
     ],
   },
+  {
+    name: "FastAPI",
+    level: 2,
+    description: [
+      "REST API 엔드포인트를 구성하고 프론트엔드와 연동한 경험",
+      "Pydantic 스키마와 SQLAlchemy 기반 데이터 흐름 구현 경험",
+    ],
+  },
+  {
+    name: "PostgreSQL",
+    level: 2,
+    description: [
+      "서비스 데이터 모델을 기준으로 테이블 구조와 조회 흐름을 이해하고 활용",
+      "PGVector를 활용한 이미지 임베딩 유사도 검색 구현 경험",
+    ],
+  },
+  {
+    name: "OpenAI API",
+    level: 2,
+    description: [
+      "사용자 프롬프트를 기반으로 이미지 생성 및 수정 기능을 구현한 경험",
+      "AI 응답을 서비스 기능으로 연결하기 위한 백엔드 API 연동 경험",
+    ],
+  },
 ];
 
 // 툴 정보 데이터
@@ -98,5 +122,29 @@ export const toolsInfo: ToolInfo[] = [
     name: "discord",
     level: 3,
     description: ["팀 커뮤니케이션 및 화상 회의", "개발 관련 커뮤니티 참여"],
+  },
+  {
+    name: "Docker",
+    level: 2,
+    description: [
+      "프론트엔드와 백엔드 서비스를 컨테이너 기반으로 실행하는 흐름 이해",
+      "Docker Compose를 활용한 배포 환경 구성 경험",
+    ],
+  },
+  {
+    name: "AWS",
+    level: 2,
+    description: [
+      "EC2, RDS, S3를 활용한 서비스 인프라 구성 흐름 이해",
+      "이미지 저장소와 데이터베이스를 서비스 기능과 연동한 경험",
+    ],
+  },
+  {
+    name: "Jenkins",
+    level: 1,
+    description: [
+      "GitHub Webhook과 Docker 기반 배포 파이프라인 구성 흐름 학습",
+      "팀 프로젝트에서 CI/CD 구조를 이해하고 적용한 경험",
+    ],
   },
 ];
