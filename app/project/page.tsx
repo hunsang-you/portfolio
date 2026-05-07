@@ -6,7 +6,6 @@ import ProjectDetail from "@/components/project-detail";
 
 export default function ProjectPage() {
   useEffect(() => {
-    // URL에 해시가 있으면 해당 위치로 스크롤, 없으면 맨 위로
     if (window.location.hash) {
       const element = document.querySelector(window.location.hash);
       if (element) {
@@ -15,10 +14,9 @@ export default function ProjectPage() {
             behavior: "smooth",
             block: "start",
           });
-        }, 100); // 페이지 로딩 후 약간의 지연
+        }, 100);
       }
     } else {
-      // 해시가 없으면 맨 위로 스크롤
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, []);
@@ -27,12 +25,12 @@ export default function ProjectPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="container mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">
+        <div className="mb-12 text-center">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight">
             프로젝트 상세
           </h1>
           <p className="text-xl text-muted-foreground">
-            각 프로젝트의 개발과정과 배운 것을 소개합니다
+            AI 기능 구현, 프론트엔드 개발, 협업 과정에서 배운 내용을 정리했습니다.
           </p>
         </div>
         <ProjectDetail />

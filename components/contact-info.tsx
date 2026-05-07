@@ -1,26 +1,17 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  HousePlusIcon,
-  Copy,
-  Check,
-} from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Check, Copy, Github, Mail, MapPin, NotebookText, Phone } from "lucide-react";
 
 export default function ContactInfo() {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
   const animation = useScrollAnimation();
-
   const email = "gjstkd123@naver.com";
 
   const handleCopyEmail = async () => {
@@ -28,11 +19,11 @@ export default function ContactInfo() {
       await navigator.clipboard.writeText(email);
       setCopied(true);
       toast({
-        title: "이메일이 복사되었습니다!",
+        title: "이메일을 복사했습니다.",
         description: "클립보드에 이메일 주소가 저장되었습니다.",
       });
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch {
       toast({
         title: "복사 실패",
         description: "이메일 복사 중 오류가 발생했습니다.",
@@ -51,7 +42,7 @@ export default function ContactInfo() {
     {
       icon: MapPin,
       label: "위치",
-      value: "청주, 대한민국",
+      value: "청주시 청원구",
       href: null,
     },
     {
@@ -61,7 +52,7 @@ export default function ContactInfo() {
       href: "https://github.com/hunsang-you",
     },
     {
-      icon: HousePlusIcon,
+      icon: NotebookText,
       label: "Blog",
       value: "12dbtkd.tistory.com",
       href: "https://12dbtkd.tistory.com",
@@ -71,27 +62,21 @@ export default function ContactInfo() {
   return (
     <Card
       ref={animation.ref}
-      className={`transition-all duration-1000 w-auto inline-block ${
+      className={`inline-block w-auto transition-all duration-1000 ${
         animation.isVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8"
+          ? "translate-y-0 opacity-100"
+          : "translate-y-8 opacity-0"
       }`}
     >
       <CardHeader>
         <CardTitle className="text-2xl">연락처 정보</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {/* 이메일 섹션 (복사 기능 포함) */}
-        <div className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors">
-          <Link
-            href={`mailto:${email}`}
-            className="flex items-center gap-3 flex-1"
-          >
+        <div className="flex items-center justify-between rounded-lg p-3 transition-colors hover:bg-muted/50">
+          <Link href={`mailto:${email}`} className="flex flex-1 items-center gap-3">
             <Mail className="h-5 w-5 text-primary" />
             <div>
-              <p className="text-sm font-medium text-muted-foreground">
-                이메일
-              </p>
+              <p className="text-sm font-medium text-muted-foreground">이메일</p>
               <p className="text-sm">{email}</p>
             </div>
           </Link>
@@ -101,21 +86,15 @@ export default function ContactInfo() {
             onClick={handleCopyEmail}
             className="ml-2"
           >
-            {copied ? (
-              <Check className="h-4 w-4" />
-            ) : (
-              <Copy className="h-4 w-4" />
-            )}
+            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
           </Button>
         </div>
 
-        {/* 나머지 연락처 정보 */}
-        {contactItems.map((item, index) => {
+        {contactItems.map((item) => {
           const Icon = item.icon;
           const content = (
             <div
-              key={index}
-              className={`flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors ${
+              className={`flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-muted/50 ${
                 item.href ? "cursor-pointer" : ""
               }`}
             >
@@ -131,7 +110,7 @@ export default function ContactInfo() {
 
           return item.href ? (
             <Link
-              key={index}
+              key={item.label}
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +118,7 @@ export default function ContactInfo() {
               {content}
             </Link>
           ) : (
-            <div key={index}>{content}</div>
+            <div key={item.label}>{content}</div>
           );
         })}
       </CardContent>

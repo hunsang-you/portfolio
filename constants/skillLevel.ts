@@ -1,127 +1,116 @@
-// 스킬 정보 타입 정의
 interface SkillInfo {
   name: string;
-  level: number; // 1-5 레벨
+  level: number;
   description: string[];
 }
 
-// 툴 정보 타입 정의
 interface ToolInfo {
   name: string;
-  level: number; // 1-5 레벨
+  level: number;
   description: string[];
 }
 
-// 스킬 정보 데이터
 export const skillsInfo: SkillInfo[] = [
   {
-    name: "JavaScript",
+    name: "OpenAI API",
     level: 3,
     description: [
-      "ES6+ 문법을 사용하여 이를 활용하여 소규모 프로젝트 진행 가능",
-      "필요한 라이브러리를 문서를 참고하여 프로젝트에 활용 가능",
-      "상태 관리, 비동기 처리, API 통신 등의 기능 구현",
+      "사용자 입력 기반 응답 생성과 AI 이미지 생성/수정 기능을 서비스에 연동한 경험",
+      "프롬프트 정제, 응답 형식 제어, 예외 상황을 고려한 프롬프트 설계 경험",
     ],
   },
   {
-    name: "TypeScript",
-    level: 3,
-    description: [
-      "정적 타입 및 인터페이스를 사용하여 변수, 함수, 객체 등의 타입을 적절하게 정의하고, 타입 호환성을 검사할 수 있음",
-      "제네릭을 사용하여 재사용 가능한 컴포넌트 또는 함수를 작성할 수 있음",
-    ],
-  },
-  {
-    name: "React",
-    level: 3,
-    description: [
-      "React 컴포넌트를 작성하고 재사용 및 활용 가능",
-      "Router를 사용하여 다양한 페이지 간의 전환 가능",
-      "상태 관리 라이브러리(Redux, Zustand) 활용 경험",
-      "Material UI, Chart 라이브러리, TailwindCSS 등 다양한 라이브러리를 필요한 영역에 활용",
-    ],
-  },
-  {
-    name: "Next.js",
+    name: "LLM / RAG",
     level: 2,
     description: [
-      "페이지 구성을 위한 라우터 구조 및 문법 숙지",
-      "컴포넌트화 및 소규모 프로젝트 가능",
+      "서비스 데이터 또는 DB 정보를 context로 활용해 답변을 생성하는 흐름 구현 경험",
+      "면접 답변 평가와 피드백 생성을 위한 루브릭 기반 프롬프트 설계 경험",
     ],
   },
   {
-    name: "HTML/CSS",
+    name: "Embedding / Vector Search",
     level: 2,
     description: [
-      "반응형 웹 디자인 구현 가능",
-      "CSS 애니메이션 및 트랜지션 활용",
+      "이미지 임베딩과 pgvector 기반 유사도 검색 구조를 이해하고 추천 흐름에 연동한 경험",
+      "생성 이미지와 기존 매물 이미지 기반 유사 매물 추천 API 및 UI 연동 경험",
     ],
   },
   {
     name: "Python",
-    level: 2,
+    level: 3,
     description: [
-      "기본 문법 이해 및 간단한 스크립트 작성 가능",
-      "알고리즘 문제 해결에 활용",
+      "기본 문법과 알고리즘 문제 해결 경험",
+      "Pandas, NumPy 기반 데이터 전처리 및 머신러닝 모델 학습 경험",
     ],
   },
   {
     name: "FastAPI",
-    level: 2,
+    level: 3,
     description: [
-      "REST API 엔드포인트를 구성하고 프론트엔드와 연동한 경험",
-      "Pydantic 스키마와 SQLAlchemy 기반 데이터 흐름 구현 경험",
+      "REST API 설계와 프론트엔드 연동 경험",
+      "AI 이미지 생성/수정, 유사도 검색, 사용자 상태 관리 API 구현 경험",
+      "job id 기반 비동기 작업 상태 조회 API 흐름 구현 경험",
     ],
   },
   {
     name: "PostgreSQL",
     level: 2,
     description: [
-      "서비스 데이터 모델을 기준으로 테이블 구조와 조회 흐름을 이해하고 활용",
-      "PGVector를 활용한 이미지 임베딩 유사도 검색 구현 경험",
+      "서비스 데이터 조회와 테이블 구조를 이해하고 API 로직에 활용한 경험",
+      "pgvector 기반 이미지 임베딩 저장/조회 및 유사도 검색 구조 이해",
     ],
   },
   {
-    name: "OpenAI API",
+    name: "Next.js",
+    level: 3,
+    description: [
+      "App Router 기반 페이지와 API Route 구현 경험",
+      "AI 이미지 생성/수정, 유사 매물 추천 등 AI 기능을 사용자 화면과 연결한 경험",
+    ],
+  },
+  {
+    name: "React",
+    level: 3,
+    description: [
+      "컴포넌트 기반 UI 구현과 재사용 경험",
+      "Zustand, Redux Toolkit 등을 활용한 클라이언트 상태 관리 경험",
+      "사용자 입력, 로딩, 실패, 결과 화면을 고려한 인터랙션 구현 경험",
+    ],
+  },
+  {
+    name: "TypeScript",
+    level: 3,
+    description: [
+      "API 응답 타입과 컴포넌트 props를 정의해 안정적인 화면 구현 가능",
+      "정적 타입과 인터페이스를 활용한 소규모 서비스 개발 경험",
+    ],
+  },
+  {
+    name: "JavaScript",
+    level: 3,
+    description: [
+      "ES6+ 문법을 활용한 웹 서비스 기능 구현 가능",
+      "비동기 처리, API 통신, 상태 관리 로직 구현 경험",
+    ],
+  },
+  {
+    name: "HTML/CSS",
     level: 2,
     description: [
-      "사용자 프롬프트를 기반으로 이미지 생성 및 수정 기능을 구현한 경험",
-      "AI 응답을 서비스 기능으로 연결하기 위한 백엔드 API 연동 경험",
+      "반응형 화면과 기본적인 UI 스타일링 구현 가능",
+      "Tailwind CSS 기반 레이아웃과 컴포넌트 스타일링 경험",
     ],
   },
 ];
 
-// 툴 정보 데이터
 export const toolsInfo: ToolInfo[] = [
   {
-    name: "Git",
-    level: 2,
-    description: [
-      "브랜치 전략을 활용한 협업 경험",
-      "GitHub 기반 프로젝트 관리 경험",
-    ],
-  },
-  {
-    name: "Figma",
-    level: 2,
-    description: [
-      "디자인 시안 확인 및 개발 적용 가능",
-      "프로토타입 제작 및 공유 경험",
-      "간단한 프로젝트 UI/UX 구성 가능",
-    ],
-  },
-  {
-    name: "notion",
-    level: 2,
-    description: [
-      "팀 문서화 및 지식 베이스 구축",
-      "프로젝트 일정 및 작업 관리",
-    ],
-  },
-  {
-    name: "discord",
+    name: "Git / GitHub",
     level: 3,
-    description: ["팀 커뮤니케이션 및 화상 회의", "개발 관련 커뮤니티 참여"],
+    description: [
+      "Issue, PR, 브랜치 전략을 활용한 협업 및 개발 이력 관리 경험",
+      "PM 역할로 기능 우선순위 설정과 작업 분배를 진행한 경험",
+    ],
   },
   {
     name: "Docker",
@@ -141,10 +130,26 @@ export const toolsInfo: ToolInfo[] = [
   },
   {
     name: "Jenkins",
-    level: 1,
+    level: 2,
     description: [
-      "GitHub Webhook과 Docker 기반 배포 파이프라인 구성 흐름 학습",
-      "팀 프로젝트에서 CI/CD 구조를 이해하고 적용한 경험",
+      "GitHub Webhook과 Docker 기반 CI/CD 자동 배포 환경 구성 경험",
+      "팀 프로젝트에서 배포 파이프라인을 이해하고 적용한 경험",
+    ],
+  },
+  {
+    name: "Figma",
+    level: 2,
+    description: [
+      "프로젝트 초기 UI/UX 구성과 화면 흐름 설계 경험",
+      "사용자 관점에서 필요한 정보 배치와 화면 구조를 고민한 경험",
+    ],
+  },
+  {
+    name: "Jira / Notion",
+    level: 2,
+    description: [
+      "프로젝트 일정, 회의 내용, 기능 요구사항을 문서화한 경험",
+      "팀 작업 현황과 우선순위를 공유하며 협업한 경험",
     ],
   },
 ];

@@ -1,19 +1,16 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Github, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Github, Globe } from "lucide-react";
 import { projects } from "@/constants/projects";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
-// 미디어 타입 확인 함수들
 function isGifFile(src: string | any): boolean {
-  if (typeof src === "string") {
-    return src.toLowerCase().endsWith(".gif");
-  }
+  if (typeof src === "string") return src.toLowerCase().endsWith(".gif");
   if (src && typeof src === "object" && src.src) {
     return src.src.toLowerCase().endsWith(".gif");
   }
@@ -21,23 +18,16 @@ function isGifFile(src: string | any): boolean {
 }
 
 function isVideoFile(src: string | any): boolean {
-  if (typeof src === "string") {
-    return src.toLowerCase().match(/\.(mp4|webm|ogg|mov)$/i) !== null;
-  }
-  if (src && typeof src === "object" && src.src) {
-    return src.src.toLowerCase().match(/\.(mp4|webm|ogg|mov)$/i) !== null;
-  }
+  const pattern = /\.(mp4|webm|ogg|mov)$/i;
+  if (typeof src === "string") return pattern.test(src);
+  if (src && typeof src === "object" && src.src) return pattern.test(src.src);
   return false;
 }
 
 function getMediaSrc(src: string | any): string {
-  if (typeof src === "string") {
-    return src;
-  }
-  if (src && typeof src === "object" && src.src) {
-    return src.src;
-  }
-  return ""; // 빈 문자열 반환
+  if (typeof src === "string") return src;
+  if (src && typeof src === "object" && src.src) return src.src;
+  return "";
 }
 
 export default function ProjectSummary() {
@@ -51,13 +41,13 @@ export default function ProjectSummary() {
         ref={titleAnimation.ref}
         className={`text-center transition-all duration-1000 ${
           titleAnimation.isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
+            ? "translate-y-0 opacity-100"
+            : "translate-y-8 opacity-0"
         }`}
       >
         <h2 className="text-3xl font-bold tracking-tight">주요 프로젝트</h2>
-        <p className="text-muted-foreground mt-2">
-          지금까지 진행한 프로젝트들을 소개합니다
+        <p className="mt-2 text-muted-foreground">
+          AI 서비스 구현 경험과 프론트엔드 프로젝트 경험을 함께 정리했습니다.
         </p>
       </div>
 
@@ -70,43 +60,30 @@ export default function ProjectSummary() {
             key={project.id}
             className={`overflow-hidden transition-all duration-500 ${
               gridAnimation.isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
             }`}
-            style={{ transitionDelay: `${index * 200}ms` }}
+            style={{ transitionDelay: `${index * 160}ms` }}
           >
             <Link href={`/project#project-${project.id}`} className="block">
-              <div className="aspect-video relative">
+              <div className="relative aspect-video bg-muted/30">
                 {isVideoFile(project.image[0]) ? (
-                  <div className="relative w-full h-full">
-                    <video
-                      className="w-full h-full object-cover"
-                      muted
-                      loop
-                      playsInline
-                      autoPlay
-                    >
-                      <source
-                        src={getMediaSrc(project.image[0])}
-                        type="video/mp4"
-                      />
-                    </video>
-                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
-                      VIDEO
-                    </div>
-                  </div>
+                  <video
+                    className="h-full w-full object-cover"
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                  >
+                    <source src={getMediaSrc(project.image[0])} type="video/mp4" />
+                  </video>
                 ) : isGifFile(project.image[0]) ? (
-                  <div className="relative w-full h-full">
-                    <img
-                      src={getMediaSrc(project.image[0]) || ""}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
-                      GIF
-                    </div>
-                  </div>
+                  <img
+                    src={getMediaSrc(project.image[0])}
+                    alt={project.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                 ) : (
                   <Image
                     src={project.image[0] || "/placeholder.svg"}
@@ -117,16 +94,16 @@ export default function ProjectSummary() {
                 )}
               </div>
               <CardHeader>
-                <CardTitle className="text-lg hover:text-primary transition-colors">
+                <CardTitle className="text-lg transition-colors hover:text-primary">
                   {project.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground line-clamp-3">
+                <p className="line-clamp-3 text-sm text-muted-foreground">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1">
-                  {project.tags.map((tag) => (
+                  {project.tags.slice(0, 6).map((tag) => (
                     <Badge key={tag} variant="outline" className="text-xs">
                       {tag}
                     </Badge>
@@ -142,24 +119,19 @@ export default function ProjectSummary() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github className="h-4 w-4 mr-1" />
+                    <Github className="mr-1 h-4 w-4" />
                     GitHub
                   </Link>
                 </Button>
                 {project.redirect && (
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
-                    asChild
-                  >
+                  <Button size="sm" variant="outline" asChild>
                     <Link
                       href={project.redirect}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Globe className="h-4 w-4 mr-1" />
-                      연결
+                      <Globe className="mr-1 h-4 w-4" />
+                      서비스 보기
                     </Link>
                   </Button>
                 )}
@@ -171,10 +143,10 @@ export default function ProjectSummary() {
 
       <div
         ref={buttonAnimation.ref}
-        className={`text-center transition-all duration-1000 delay-600 ${
+        className={`text-center transition-all delay-600 duration-1000 ${
           buttonAnimation.isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"
+            ? "translate-y-0 opacity-100"
+            : "translate-y-8 opacity-0"
         }`}
       >
         <Button asChild>
