@@ -258,7 +258,7 @@ export default function IntroduceSection() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Code className="h-5 w-5" />
-                Tools
+                DevOps / Tools
               </CardTitle>
             </CardHeader>
             <CardContent>

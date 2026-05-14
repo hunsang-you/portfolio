@@ -45,7 +45,7 @@ export const skillsInfo: SkillInfo[] = [
   },
   {
     name: "FastAPI",
-    level: 3,
+    level: 2,
     description: [
       "프론트엔드에서 필요한 REST API를 만들고 연결했습니다.",
       "AI 이미지 생성/수정, 추천 결과 조회, 사용자 상태 관리 API를 구현했습니다.",
@@ -54,7 +54,7 @@ export const skillsInfo: SkillInfo[] = [
   },
   {
     name: "PostgreSQL",
-    level: 2,
+    level: 1,
     description: [
       "서비스에 필요한 데이터를 조회하고 API 로직에 활용했습니다.",
       "pgvector로 임베딩을 저장하고 검색하는 구조를 이해하고 사용했습니다.",
@@ -105,7 +105,7 @@ export const skillsInfo: SkillInfo[] = [
 
 export const toolsInfo: ToolInfo[] = [
   {
-    name: "Git / GitHub",
+    name: "Git",
     level: 3,
     description: [
       "Issue, PR, 브랜치 전략으로 작업 내용을 관리했습니다.",
@@ -145,11 +145,19 @@ export const toolsInfo: ToolInfo[] = [
     ],
   },
   {
-    name: "Jira / Notion",
+    name: "Jira",
     level: 2,
     description: [
-      "일정, 회의 내용, 기능 요구사항을 문서로 정리했습니다.",
       "팀 작업 현황과 우선순위를 공유하며 프로젝트를 진행했습니다.",
+      "일정과 작업 상태를 관리하는 데 사용했습니다.",
+    ],
+  },
+  {
+    name: "Notion",
+    level: 2,
+    description: [
+      "회의 내용과 기능 요구사항을 문서로 정리했습니다.",
+      "프로젝트 진행 중 필요한 자료와 결정 사항을 기록했습니다.",
     ],
   },
 ];
