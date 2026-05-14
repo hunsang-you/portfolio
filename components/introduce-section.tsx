@@ -47,10 +47,10 @@ export default function IntroduceSection() {
               : "translate-y-8 opacity-0"
           }`}
         >
-          <h1 className="text-4xl font-bold tracking-tight">
-            <span>프론트엔드를 시작으로 AI 서비스까지,</span>
-            <span>다양한 기술을 경험하며 성장하는</span>
-            <span>개발자 유헌상입니다</span>
+          <h1 className="flex flex-col text-4xl font-bold tracking-tight">
+            <span>프론트엔드를 시작으로 AI 까지.</span>
+            <span>다양한 기술을 경험하며</span>
+            <span>성장하는개발자 유헌상입니다.</span>
           </h1>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-muted-foreground">
             프론트엔드 구현을 중심으로 시작해, 최근 프로젝트에서는 FastAPI 기반
