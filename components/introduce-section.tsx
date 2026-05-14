@@ -48,13 +48,14 @@ export default function IntroduceSection() {
           }`}
         >
           <h1 className="text-4xl font-bold tracking-tight">
-            프론트엔드와 AI 기능을 함께 구현합니다
+            프론트엔드를 시작으로 AI 서비스까지, 다양한 기술을 경험하며 성장하는
+            개발자 유헌상입니다
           </h1>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-muted-foreground">
-            Next.js 화면 구현, FastAPI API, OpenAI 기반 기능, 검색·추천
-            프로젝트를 경험했습니다. 사용자가 보는 화면과 데이터가 처리되는
-            과정을 함께 확인하며, 아이디어를 실제 동작하는 서비스로 옮기는 데
-            강점이 있습니다.
+            프론트엔드 구현을 중심으로 시작해, 최근 프로젝트에서는 FastAPI 기반
+            API 구현과 LLM 기능 연동까지 경험을 넓혀왔습니다. 사용자 화면과
+            백엔드 응답, AI 결과가 자연스럽게 이어지도록 구현하며, 새로운 기술을
+            빠르게 학습해 프로젝트에 적용하고 싶습니다.
           </p>
         </div>
 
@@ -91,7 +92,9 @@ export default function IntroduceSection() {
 
                   <div className="flex-1 space-y-4">
                     <div>
-                      <h4 className="font-semibold">충남대학교 물리학과 졸업</h4>
+                      <h4 className="font-semibold">
+                        충남대학교 물리학과 졸업
+                      </h4>
                       <p className="text-sm text-muted-foreground">
                         2013.03 ~ 2020.02
                       </p>
@@ -156,25 +159,27 @@ export default function IntroduceSection() {
                     AI 기능은 실패하는 순간까지 설계합니다
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    생성형 AI는 응답 시간이 길고 결과도 매번 달라질 수
-                    있습니다. 그래서 로딩, 실패, 재시도, 상태 초기화처럼
-                    사용자가 실제로 마주하는 순간까지 함께 챙기려 합니다.
+                    생성형 AI는 응답 시간이 길고 결과도 매번 달라질 수 있습니다.
+                    그래서 로딩, 실패, 재시도, 상태 초기화처럼 사용자가 실제로
+                    마주하는 순간까지 함께 챙기려 합니다.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold">프론트엔드는 제 출발점입니다</h4>
+                  <h4 className="font-semibold">
+                    프론트엔드는 제 출발점입니다
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    화면 구현에서 시작해 API와 AI 기능까지 다루는 쪽으로
-                    넓혀 왔습니다. 사용자가 보는 부분과 서버에서 처리되는
-                    부분을 함께 이해하는 개발자로 성장하고 있습니다.
+                    화면 구현에서 시작해 API와 AI 기능까지 다루는 쪽으로 넓혀
+                    왔습니다. 사용자가 보는 부분과 서버에서 처리되는 부분을 함께
+                    이해하는 개발자로 성장하고 있습니다.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold">기록하며 함께 맞춰 갑니다</h4>
                   <p className="text-sm text-muted-foreground">
-                    PM 역할을 맡으며 기능 우선순위와 일정을 조율했습니다.
-                    작업 내용과 결정 이유를 남겨 팀원이 같은 맥락에서 움직일
-                    수 있게 하는 편입니다.
+                    PM 역할을 맡으며 기능 우선순위와 일정을 조율했습니다. 작업
+                    내용과 결정 이유를 남겨 팀원이 같은 맥락에서 움직일 수 있게
+                    하는 편입니다.
                   </p>
                 </div>
               </CardContent>
