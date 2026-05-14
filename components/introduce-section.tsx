@@ -169,17 +169,21 @@ export default function IntroduceSection() {
                     프론트엔드는 제 출발점입니다
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    화면 구현에서 시작해 API와 AI 기능까지 다루는 쪽으로 넓혀
-                    왔습니다. 사용자가 보는 부분과 서버에서 처리되는 부분을 함께
-                    이해하는 개발자로 성장하고 있습니다.
+                    화면 구현에서 시작해 API와 AI 기능까지 다루는 쪽으로 개발
+                    분야를 넓혀 왔습니다. 사용자가 보는 부분과 서버에서 처리되는
+                    부분을 함께 이해하고, 사용자에게 더 좋은 경험을 주는
+                    개발자가 되고 싶습니다.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold">기록하며 함께 맞춰 갑니다</h4>
+                  <h4 className="font-semibold">
+                    팀원과 소통하며 함께 맞춰 갑니다
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    PM 역할을 맡으며 기능 우선순위와 일정을 조율했습니다. 작업
-                    내용과 결정 이유를 남겨 팀원이 같은 맥락에서 움직일 수 있게
-                    하는 편입니다.
+                    여러 팀 프로젝트를 거치면서 팀원들과의 소통과 협업이
+                    중요하다는 걸 많이 느꼈습니다. PM 역할까지 맡으며 기능
+                    우선순위와 작업 분배를 조율하기도 했습니다. 혼자서 빠르게
+                    가는 것보다, 다함께 멀리 가고자 하는 개발자가 되고 싶습니다.
                   </p>
                 </div>
               </CardContent>
